@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add Kitty Button Renders with proper properties. 1`] = `
+<button
+  className="addKitty"
+  onClick={[Function]}
+>
+  Add Kitten
+</button>
+`;
