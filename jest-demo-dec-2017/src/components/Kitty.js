@@ -9,7 +9,6 @@ export const Kitty = (props) => {
     );
 }
 
-//KittyActionButton
 export const AddKittyButton = (props) => {
     return (
         <button className={props.class} onClick={props.onClickCallback}>
@@ -18,7 +17,7 @@ export const AddKittyButton = (props) => {
     );
 }
 
-export const AddKittyActions = props => (
+export const AddKittyActions = (props) => (
     <div>
         <AddKittyButton class="AddKitty" onClickCallback={props.AddKitty}> Add Kitty </AddKittyButton>
         <AddKittyButton class="RemoveKitty" onClickCallback={props.RemoveKitty}> Remove Kitty </AddKittyButton>

@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 
 const initialState = {
     kitties: 0
@@ -7,8 +7,10 @@ const initialState = {
 function kitties(state = initialState.kitties, action) {
     switch (action.type) {
         case "ADD_A_KITTY":
-            const newInfo = state++;
-            return Object.assign(state, state, {kitties: newInfo});
+            state++;
+            return state;
+        case "REMOVE_A_KITTY":
+            return state > 0 ? state -1 : state;
         default:
             return state;
     }

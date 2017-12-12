@@ -47,12 +47,14 @@ class App extends Component {
     const { kitties } = this.state;
     this.setState({kitties: kitties -1});
   }
+
+  mapStateToProps(state){
+    return {
+      'kitties': state.kitties
+    };
+  }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    'kitties': state.kitties
-  };
-}
 
-export default connect(mapStateToProps)(App);
+
+export default connect(App.mapStateToProps)(App);

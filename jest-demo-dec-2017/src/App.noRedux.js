@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from './img/kitty.png';
 import kittyImg from './img/garfield.png';
 import { Kitty, AddKittyActions } from './components/Kitty';
-import { addKitty } from './action-creators/kittyActions'
 import './App.css';
 
 
@@ -33,7 +32,7 @@ class App extends Component {
   }
 
   renderKitties() {
-    const { kitties } = this.props;
+    const { kitties } = this.state;
     let kittens =  [];
     for(var i = 0; i < kitties; i ++) {
       kittens.push(<Kitty key={Math.random(100)} kittyImg={kittyImg} />)
@@ -43,13 +42,13 @@ class App extends Component {
   }
 
   addAKitty() {
-    const { kitties } = this.props;
-    this.setState({kitties: kitties++});
+    const { kitties } = this.state;
+    this.setState({kitties: kitties +1});
   }
 
   removeAKitty() {
-    const { kitties } = this.props;
-    this.setState({kitties: kitties--});
+    const { kitties } = this.state;
+    this.setState({kitties: kitties -1});
   }
 }
 

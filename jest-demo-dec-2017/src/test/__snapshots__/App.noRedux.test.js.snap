@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <img
+      alt="logo"
+      className="App-logo"
+      src="kitty.png"
+    />
+    <h1
+      className="App-title"
+    >
+      Add Kittehs
+    </h1>
+    <div>
+      <button
+        className="AddKitty"
+        onClick={[Function]}
+      >
+         Add Kitty 
+      </button>
+      <button
+        className="RemoveKitty"
+        onClick={[Function]}
+      >
+         Remove Kitty 
+      </button>
+    </div>
+  </header>
+  <div
+    className="addKittiesForm"
+  />
+</div>
+`;
