@@ -1,8 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Add Kitty Button Renders with proper properties. 1`] = `
+exports[`component renders properly. Add Kitty Button Renders with proper properties. 1`] = `
 <button
   className={undefined}
   onClick={[Function]}
 />
+`;
+
+exports[`component renders properly. renders without crashing react-test-renderer and matches snapshot. 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <img
+      alt="logo"
+      className="App-logo"
+      src="kitty.png"
+    />
+    <h1
+      className="App-title"
+    >
+      Add Kittehs
+    </h1>
+    <div>
+      <button
+        className="AddKitty"
+        onClick={[Function]}
+      >
+         Add Kitty 
+      </button>
+      <button
+        className="RemoveKitty"
+        onClick={[Function]}
+      >
+         Remove Kitty 
+      </button>
+    </div>
+  </header>
+  <div
+    className="addKittiesForm"
+  />
+</div>
 `;

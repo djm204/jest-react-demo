@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders without crashing 1`] = `
+exports[`react component without redux renders without crashing react-test-renderer and matches snapshot. 1`] = `
 <div
   className="App"
 >

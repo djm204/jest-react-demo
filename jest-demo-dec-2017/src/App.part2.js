@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import logo from './img/kitty.png';
+import _ from 'lodash';
 import kittyImg from './img/garfield.png';
 import { Kitty, AddKittyActions } from './components/Kitty';
-import { addKitty } from './action-creators/kittyActions'
+import { addKitty, removeKitty } from './action-creators/kittyActions'
 import './App.css';
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.addAKitty = this.addAKitty.bind(this);
+    this.removeAKitty = this.removeAKitty.bind(this);
   }
 
   render() {
@@ -19,7 +21,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Add Kittehs</h1>
-          <AddKittyActions onClickCallback={this.addAKitty.bind(this)} />
+          <AddKittyActions AddKitty={this.addAKitty} RemoveKitty={this.removeAKitty} />
         </header>
         <div className="addKittiesForm">
           {this.renderKitties()}
@@ -39,18 +41,23 @@ class App extends Component {
   }
   
   addAKitty() {
-    const { kitties } = this.state;
-    this.setState({kitties: kitties +1});
+    const { dispatch } = this.props;
+    dispatch(addKitty());
   }
 
   removeAKitty() {
-    const { kitties } = this.state;
-    this.setState({kitties: kitties -1});
+    const { dispatch } = this.props;
+    dispatch(removeKitty());
   }
 
-  mapStateToProps(state){
+  static mapStateToProps(state){
     return {
-      'kitties': state.kitties
+      'kittiesWithNames': _.filter(state.kittiesWithNames, (kitty) => {
+        return kitty.name !== '';
+      }),
+      'kitties': _.filter(state.kittiesWithNames, kitty => {
+        return kitty.name !== '';
+      }).length
     };
   }
 }

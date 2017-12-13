@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
 
 const initialState = {
-    kitties: 0
+    kitties: 0,
+    kittiesWithNames: []
 }
 
 function kitties(state = initialState.kitties, action) {

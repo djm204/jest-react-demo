@@ -3,7 +3,7 @@ import 'whatwg-fetch'
 export function addKitty(name) {
     return {
         type: "ADD_A_KITTY",
-        name,
+        name
     }
 }
 
